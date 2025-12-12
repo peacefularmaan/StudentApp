@@ -1,0 +1,86 @@
+.student-table-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.student-header h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+  color: #e5e7eb;
+}
+
+.student-header p {
+  margin: 0 0 18px;
+  color: #9ca3af;
+  font-size: 0.95rem;
+}
+
+.table-shell {
+  position: relative;
+  border-radius: 20px;
+  padding: 1px;
+  background: radial-gradient(circle at top, #22d3ee33, #4f46e533, transparent 65%);
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.9);
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 18px;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #020617 0%, #020617 60%, #020617 100%);
+}
+
+.student-table thead {
+  background: linear-gradient(90deg, #0ea5e9, #6366f1, #a855f7);
+}
+
+.student-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #f9fafb;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.6);
+}
+
+.student-table td {
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+}
+
+.student-table tbody tr:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.student-table tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.student-table tbody tr:hover {
+  background: radial-gradient(circle at left, rgba(56, 189, 248, 0.28), rgba(15, 23, 42, 0.98));
+  transform: translateY(-1px);
+}
+
+.student-table th:first-child,
+.student-table td:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+.student-table td:nth-child(3) {
+  color: #a5b4fc;
+  font-weight: 500;
+}
+
+.table-glow {
+  position: absolute;
+  inset: auto 15% -22px 15%;
+  height: 28px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.45), transparent 60%);
+  filter: blur(10px);
+  pointer-events: none;
+}

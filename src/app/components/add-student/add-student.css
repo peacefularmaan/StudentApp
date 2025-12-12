@@ -1,0 +1,130 @@
+.add-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.add-card {
+  width: 520px;
+  padding: 26px 28px 30px;
+  border-radius: 20px;
+  background: radial-gradient(circle at top, #020617 0%, #020617 60%, #020617 100%);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+}
+
+.add-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+}
+
+.subtext {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row.inline {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+input[type="text"],
+select,
+input[type="number"] {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input::placeholder {
+  color: #6b7280;
+}
+
+input:focus,
+select:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.7);
+}
+
+.radio-group {
+  display: flex;
+  gap: 14px;
+  font-size: 0.9rem;
+}
+
+.holo-msg {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.7);
+  background: radial-gradient(circle at left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 0.9));
+  font-size: 0.82rem;
+  color: #e0f2fe;
+}
+
+.error {
+  font-size: 0.78rem;
+  color: #fca5a5;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #22d3ee, #6366f1, #a855f7);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.7);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+label.required::after {
+  content: " *";
+  color: #ff4d4d;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+label {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}

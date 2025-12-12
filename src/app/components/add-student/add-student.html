@@ -1,0 +1,89 @@
+<div class="add-wrapper">
+  <div class="add-card">
+    <h2>Register New Student</h2>
+    <p class="subtext">
+      Configure a new student profile.
+    </p>
+
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-row">
+        <label class="required">Name</label>
+        <input type="text" formControlName="name" placeholder="Enter student's full name" />
+        <div class="error" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <span *ngIf="name?.errors?.['required']">
+            Name is required.
+          </span>
+          <span *ngIf="name?.errors?.['minlength']">
+            Name must be at least 5 characters.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="required">Class</label>
+        <select formControlName="classLevel">
+          <option value="">Select class</option>
+          <option *ngFor="let c of classes" [value]="c">
+            Class {{ c }}
+          </option>
+        </select>
+        <div class="error" *ngIf="classLevel?.invalid && (classLevel?.dirty || classLevel?.touched)">
+          Class is required.
+        </div>
+
+        <div class="holo-msg" *ngIf="classMessage">
+          {{ classMessage }}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="required">Gender</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" formControlName="gender" value="Male" /> Male
+          </label>
+          <label>
+            <input type="radio" formControlName="gender" value="Female" /> Female
+          </label>
+        </div>
+        <div class="error" *ngIf="gender?.invalid && (gender?.dirty || gender?.touched)">
+          Gender is required.
+        </div>
+      </div>
+
+      <div class="form-row inline">
+        <label>Has hobby</label>
+        <input type="checkbox" formControlName="hasHobby" />
+      </div>
+
+      <div class="form-row" *ngIf="hasHobby">
+        <label class="required">
+          Hobby
+        </label>
+
+        <input type="text" formControlName="hobby" placeholder="Describe student's hobby" />
+
+        <div class="error" *ngIf="hasHobby?.invalid && (hasHobby?.dirty || hasHobby?.touched)">
+          <span *ngIf="hasHobby?.errors?.['required']">
+            Hobby is required when 'Has hobby' is checked.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label>Favorite Subject</label>
+        <select formControlName="favoriteSubject">
+          <option value="">Select subject (optional)</option>
+          <option *ngFor="let s of subjects" [value]="s">
+            {{ s }}
+          </option>
+        </select>
+      </div>
+
+      <button type="submit" [disabled]="studentForm.invalid">
+        Save Student Profile
+      </button>
+    </form>
+  </div>
+</div>

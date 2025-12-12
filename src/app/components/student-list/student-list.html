@@ -1,0 +1,38 @@
+<div class="student-table-wrapper">
+  <div class="student-header">
+    <h1>Students List</h1>
+    <p>Listing all the registered students</p>
+  </div>
+
+  <div class="table-shell">
+    <table class="student-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Gender</th>
+          <th>Has hobby</th>
+          <th>Hobby</th>
+          <th>Favorite Subject</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of students; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ s.name }}</td>
+          <td>Class {{ s.classLevel }}</td>
+          <td>{{ s.gender }}</td>
+          <td>{{ s.hasHobby ? 'Yes' : 'No' }}</td>
+          <td>{{ s.hasHobby && s.hobby ? s.hobby : 'No Hobby' }}</td>
+          <td>{{ s.favoriteSubject || 'Not Specified' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="table-glow"></div>
+  </div>
+</div>
+
+
